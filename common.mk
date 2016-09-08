@@ -15,6 +15,7 @@
 
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_HAS_QC_KERNEL_SOURCE := true
+BOARD_USES_ADRENO := true
 
 # Allow building audio encoders
 TARGET_USES_QCOM_MM_AUDIO := true
