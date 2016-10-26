@@ -24,6 +24,13 @@ TARGET_USES_QCOM_MM_AUDIO := true
 # Skip boot jars check
 SKIP_BOOT_JARS_CHECK := true
 
+# SECCOMP Extension
+BOARD_SECCOMP_POLICY += device/qcom/common/seccomp
+
+PRODUCT_COPY_FILES += \
+    device/qcom/common/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
+    device/qcom/common/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/commonsys/cryptfs_hw
