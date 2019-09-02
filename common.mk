@@ -21,6 +21,9 @@ BOARD_USES_QCNE := true
 # Allow building audio encoders
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# Skip boot jars check
+SKIP_BOOT_JARS_CHECK := true
+
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/commonsys/cryptfs_hw
