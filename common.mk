@@ -43,6 +43,27 @@ PRODUCT_BOOT_JARS += dpmapi
 PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
+# 845 series and newer
+ifneq (,$(filter audio, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/audio/qti-audio.mk
+endif
+
+ifneq (,$(filter bt, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/bt/qti-bt.mk
+endif
+
+ifneq (,$(filter display, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/display/qti-display.mk
+endif
+
+ifneq (,$(filter telephony, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/telephony/qti-telephony.mk
+endif
+
+ifneq (,$(filter usb, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/usb/qti-usb.mk
+endif
+
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/commonsys/cryptfs_hw
