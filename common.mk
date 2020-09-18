@@ -95,3 +95,20 @@ endif
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/commonsys/cryptfs_hw
 endif
+
+# Soong namespace
+SOONG_CONFIG_NAMESPACES += qssi_vs_vendor
+SOONG_CONFIG_qssi_vs_vendor += qssi_or_vendor
+SOONG_CONFIG_qssi_vs_vendor_qssi_or_vendor := qssi
+
+SOONG_CONFIG_NAMESPACES += aosp_vs_qva
+SOONG_CONFIG_aosp_vs_qva += aosp_or_qva
+ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
+SOONG_CONFIG_aosp_vs_qva_aosp_or_qva := qva
+else
+SOONG_CONFIG_aosp_vs_qva_aosp_or_qva := aosp
+endif
+
+SOONG_CONFIG_NAMESPACES += bredr_vs_btadva
+SOONG_CONFIG_bredr_vs_btadva += bredr_or_btadva
+SOONG_CONFIG_bredr_vs_btadva_bredr_or_btadva := bredr
