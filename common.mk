@@ -13,6 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(TARGET_BOARD_PLATFORM),)
+$(error "TARGET_BOARD_PLATFORM is not defined yet, please define in your device makefile so it's accessible to QCOM common.")
+endif
+
+include $(LOCAL_PATH)/qcom_boards.mk
+
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_HAS_QC_KERNEL_SOURCE := true
 BOARD_USES_ADRENO := true
