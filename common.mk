@@ -24,6 +24,12 @@ TARGET_USES_QCOM_MM_AUDIO := true
 # Skip boot jars check
 SKIP_BOOT_JARS_CHECK := true
 
+# Compatibility matrix
+ifeq ($(TARGET_FWK_SUPPORTS_FULL_VALUEADDS),true)
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
+endif
+
 # SECCOMP Extension
 BOARD_SECCOMP_POLICY += device/qcom/common/seccomp
 
