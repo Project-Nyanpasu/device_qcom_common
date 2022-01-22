@@ -83,9 +83,12 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.cne.feature=1 \
     persist.vendor.data.mode=concurrent \
     persist.vendor.dpm.feature=11 \
+    persist.vendor.dpm.idletimer.mode=default \
     ril.subscription.types=NV,RUIM \
     ro.telephony.default_network=33,33 \
+    ro.telephony.sim_slots.count=2 \
     ro.vendor.use_data_netmgrd=true \
+    telephony.active_modems.max_count=2 \
     telephony.lteOnCdmaDevice=1
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
