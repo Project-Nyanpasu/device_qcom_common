@@ -57,14 +57,14 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
 
 # Properties
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.perf-hal.ver=2.2 \
     ro.vendor.extension_library=libqti-perfd-client.so \
     vendor.power.pasr.enabled=true \
     ro.vendor.qspm.enable=true
 
 ifeq ($(call is-board-platform-in-list, kona lahaina),true)
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.beluga.p=0x3 \
     ro.vendor.beluga.c=0x4800 \
     ro.vendor.beluga.s=0x900 \
@@ -73,9 +73,9 @@ endif
 
 ifneq (,$(filter 4.14 4.19 5.4, $(TARGET_KERNEL_VERSION)))
 ifeq ($(TARGET_BOARD_PLATFORM), holi)
-PRODUCT_PROPERTY_OVERRIDES += vendor.pasr.activemode.enabled=false
+PRODUCT_VENDOR_PROPERTIES += vendor.pasr.activemode.enabled=false
 else
-PRODUCT_PROPERTY_OVERRIDES += vendor.pasr.activemode.enabled=true
+PRODUCT_VENDOR_PROPERTIES += vendor.pasr.activemode.enabled=true
 endif
 endif
 
