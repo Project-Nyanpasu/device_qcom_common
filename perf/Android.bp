@@ -16,13 +16,6 @@ soong_namespace {
 }
 
 prebuilt_etc {
-    name: "init.ice.perf.rc",
-    src: "init.ice.perf.rc",
-    sub_dir: "init",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "task_profiles-qti",
     filename_from_src: true,
     src: "task_profiles.json",
