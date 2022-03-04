@@ -80,6 +80,13 @@ ifneq (,$(filter usb, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(LOCAL_PATH)/usb/qti-usb.mk
 endif
 
+# Nxp NFC
+ifeq ($(TARGET_USES_NQ_NFC),true)
+PRODUCT_PACKAGES += \
+    vendor.nxp.hardware.nfc@2.0-service \
+    nfc_nci.nqx.default.hw
+endif
+
 # QCOM HW crypto
 ifeq ($(TARGET_HW_DISK_ENCRYPTION),true)
     TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/commonsys/cryptfs_hw
