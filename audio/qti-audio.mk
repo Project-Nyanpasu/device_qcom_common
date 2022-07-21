@@ -12,17 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from QSSI audio makefile.
+# Inherit from QSSI audio makefiles.
 include $(TOPDIR)vendor/qcom/opensource/commonsys/audio/configs/qssi/qssi.mk
+include $(TOPDIR)vendor/qcom/opensource/commonsys/audio/configs/qssi/audio_system_product.mk
 
 ifeq ($(call is-board-platform-in-list,sm6150),true)
 -include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/msmsteppe/msmsteppe.mk
 else
 -include $(TOPDIR)vendor/qcom/opensource/audio-hal/primary-hal/configs/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
 endif
-
-# Override proprietary definitions from SoC audio makefile.
-AUDIO_FEATURE_ENABLED_AHAL_EXT := false
 
 # Override proprietary definitions from SoC audio HAL Makefiles.
 AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := false
@@ -43,8 +41,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     liba2dpoffload \
-    libaudiohal \
-    libaudio-resampler \
     libaudioroute \
     libbatterylistener \
     libcirrusspkrprot \
