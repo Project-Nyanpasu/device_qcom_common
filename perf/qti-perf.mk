@@ -42,6 +42,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/perf/poweropt-service-disable.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/poweropt-service-disable.rc
 endif
 
+# Only copy task_profiles.json for 5.4 targets.
+ifeq ($(TARGET_KERNEL_VERSION),5.4)
+PRODUCT_COPY_FILES += \
+    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+endif
+
 # Packages
 PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
@@ -49,11 +55,6 @@ PRODUCT_PACKAGES += \
     libpsi.vendor \
     libtflite \
     vendor.qti.hardware.servicetracker@1.2.vendor
-
-ifeq ($(TARGET_KERNEL_VERSION),5.4)
-PRODUCT_PACKAGES += \
-    task_profiles-qti
-endif
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \

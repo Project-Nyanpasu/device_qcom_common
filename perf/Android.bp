@@ -14,10 +14,3 @@
 
 soong_namespace {
 }
-
-prebuilt_etc {
-    name: "task_profiles-qti",
-    filename_from_src: true,
-    src: "task_profiles.json",
-    vendor: true,
-}
