@@ -27,7 +27,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
 
 # HIDL
-DEVICE_FRAMEWORK_MANIFEST_FILE += device/qcom/common/telephony/framework_manifest.xml
+SYSTEM_EXT_MANIFEST_FILES += device/qcom/common/telephony/framework_manifest.xml
 
 # IPACM
 $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr/ipacm_vendor_product.mk)
