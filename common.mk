@@ -56,6 +56,10 @@ PRODUCT_BOOT_JARS += com.qti.location.sdk
 endif
 
 # 845 series and newer
+ifneq (,$(filter av, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/av/qti-av.mk
+endif
+
 ifneq (,$(filter audio, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(LOCAL_PATH)/audio/qti-audio.mk
 endif
@@ -82,6 +86,15 @@ endif
 
 ifneq (,$(filter usb, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(LOCAL_PATH)/usb/qti-usb.mk
+endif
+
+ifneq (,$(filter wfd, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/wfd/qti-wfd.mk
+endif
+
+# <= MSM8998
+ifneq (,$(filter wfd-legacy, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/wfd-legacy/qti-wfd-legacy.mk
 endif
 
 # Nxp NFC
