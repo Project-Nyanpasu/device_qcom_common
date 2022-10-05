@@ -31,4 +31,4 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml
 
 PRODUCT_PACKAGES += \
-    init.ice.usb.rc
+    init.nyanpasu.usb.rc

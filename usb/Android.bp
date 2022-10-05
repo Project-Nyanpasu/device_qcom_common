@@ -16,8 +16,8 @@ soong_namespace {
 }
 
 prebuilt_etc {
-    name: "init.ice.usb.rc",
-    src: "init.ice.usb.rc",
+    name: "init.nyanpasu.usb.rc",
+    src: "init.nyanpasu.usb.rc",
     sub_dir: "init",
     vendor: true,
 }
