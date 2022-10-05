@@ -108,3 +108,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Sensitive Phone Numbers list
 PRODUCT_COPY_FILES += \
     device/qcom/common/telephony/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
+
+# Get non-open-source specific aspects.
+$(call inherit-product-if-exists, vendor/qcom/common/telephony/telephony-vendor.mk)
