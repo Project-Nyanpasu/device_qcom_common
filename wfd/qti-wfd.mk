@@ -24,6 +24,9 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
 
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor
+
 # Inherit QCOM display dependencies.
 $(call inherit-product-if-exists, vendor/qcom/opensource/commonsys-intf/display/config/display-product-system.mk)
 

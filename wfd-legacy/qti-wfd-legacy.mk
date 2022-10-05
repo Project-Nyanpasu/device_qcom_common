@@ -34,5 +34,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libaacwrapper
 
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor
+
 # Get non-open-source specific aspects.
 $(call inherit-product-if-exists, vendor/qcom/common/wfd-legacy/wfd-legacy-vendor.mk)
