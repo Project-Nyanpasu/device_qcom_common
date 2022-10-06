@@ -29,3 +29,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.vendor.bt.a2dp.aac_whitelist=false \
     ro.bluetooth.library_name=libbluetooth_qti.so
 endif
+
+# Get non-open-source specific aspects.
+$(call inherit-product-if-exists, vendor/qcom/common/bt/bt-vendor.mk)
