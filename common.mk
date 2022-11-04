@@ -76,6 +76,10 @@ ifneq (,$(filter gps, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(LOCAL_PATH)/gps/qti-gps.mk
 endif
 
+ifneq (,$(filter nq-nfc, $(TARGET_COMMON_QTI_COMPONENTS)))
+include $(LOCAL_PATH)/nq-nfc/qti-nq-nfc.mk
+endif
+
 ifneq (,$(filter perf, $(TARGET_COMMON_QTI_COMPONENTS)))
 include $(LOCAL_PATH)/perf/qti-perf.mk
 endif
